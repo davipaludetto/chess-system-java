@@ -40,9 +40,12 @@ public class ChessMatch { // coração sistema com as regras do jogo
 		return capturedPiece;
 	}
 	
-	private void validateSourcePosition(Position position) {
+	private void validateSourcePosition(Position position) { // duas verificações da peça de origem
 		if (!board.thereIsAPiece(position)) {
 			throw new ChessException("There is no piece on source positon");
+		}
+		if(!board.piece(position).isThereAnyPossibleMove()) {
+			throw new ChessException("There is no possible moves for the chosen piece");
 		}
 	}	
 	
