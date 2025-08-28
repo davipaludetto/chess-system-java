@@ -19,8 +19,7 @@ public abstract class Piece {
 		this.board = board; 				
 	} Não podemos permitir que o tabuleiro seja alterado */
 	
-	public abstract boolean[][] possibleMoves();
-	// método concreto utilizando o abstrato "hook methods"
+	public abstract boolean[][] possibleMoves(); // método concreto utilizando o abstrato "hook methods"
 	public boolean possibleMove(Position position) {
 		return possibleMoves()[position.getRow()][position.getColumn()];
 	}
